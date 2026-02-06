@@ -1,390 +1,299 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 
 <head>
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta charset="utf-8" />
-	<title>Apexo - Free Dental Clinic Practice Manager</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Apexo | Open Source Dental Practice Management</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="icon" type="image/x-icon" href="fav.png" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-touch-fullscreen" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="default" />
-	<meta name="description" content="Keep your dental clinic records at your finger tips with a beautifully designed application that meets most needs of any
-    dental clinic. From patient records, history, appointments and scheduling, to finances and detailed reports." />
-	<link class="main-stylesheet" href="assets/css/styles.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;800&display=swap"
+		rel="stylesheet">
+
+	<style>
+		body {
+			font-family: 'Plus Jakarta Sans', sans-serif;
+			background-color: #020617;
+			color: #f8fafc;
+		}
+
+		.feature-card {
+			background: rgba(30, 41, 59, 0.2);
+			border: 1px solid rgba(255, 255, 255, 0.03);
+			transition: all 0.3s ease;
+		}
+
+		.feature-card:hover {
+			border-color: rgba(245, 158, 11, 0.3);
+			background: rgba(30, 41, 59, 0.4);
+		}
+
+		.platform-btn {
+			background: rgba(255, 255, 255, 0.03);
+			border: 1px solid rgba(255, 255, 255, 0.08);
+			transition: all 0.2s ease;
+			text-transform: capitalize;
+		}
+
+		.platform-btn img {
+			height: 20px;
+			display: inline-block;
+			margin-right: 5px;
+		}
+
+		.platform-btn:hover {
+			background: rgba(255, 255, 255, 0.1);
+			border-color: #f59e0b;
+		}
+
+		.glass-panel {
+			background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(2, 6, 23, 0) 100%);
+			border: 1px solid rgba(255, 255, 255, 0.05);
+		}
+
+		/* Basic Responsive Logic */
+		.mobile-only {
+			display: none;
+		}
+
+		.desktop-only {
+			display: block;
+		}
+
+		@media (max-width: 620px) {
+			.mobile-only {
+				display: block;
+			}
+
+			.desktop-only {
+				display: none;
+			}
+		}
+
+		video {
+			width: 100%;
+			height: auto;
+			border-radius: 12px;
+			/* Optional: adds a modern rounded look */
+		}
+	</style>
 </head>
 
-<body class="windows desktop">
-	<nav class="header md-header light-solid" data-pages="header" data-pages-header="autoresize">
-		<div class="container relative">
-			<div class="pull-left">
-				<div class="header-inner">
-					<img src="assets/images/logo.png" height="22" data-src-retina="assets/images/logo_2x.png" class=""
-						alt="" />
+<body class="antialiased">
+	<nav class="fixed top-0 w-full z-50 bg-[#020617]/90 backdrop-blur-md border-b border-white/5">
+		<div class="container mx-auto px-6 h-16 flex justify-between items-center">
+			<div class="flex items-center gap-3">
+				<img src="assets/images/logo_white_2x.png" alt="Apexo Logo" class="h-8 w-auto">
+			</div>
+			<div class="hidden md:flex gap-6 text-xs font-bold uppercase tracking-widest text-slate-400">
+				<a href="https://docs.apexo.app" class="hover:text-amber-500 transition">Docs</a>
+				<a href="https://demo.apexo.app" class="hover:text-amber-500 transition">Demo</a>
+				<a href="https://apexo.app/changelog" class="hover:text-amber-500 transition">Changelog</a>
+				<a href="https://github.com/elselawi/apexo" class="hover:text-amber-500 transition">Github</a>
+				<a href="#download"
+					class="text-amber-500 border border-amber-500/30 px-4 py-1.5 rounded-md hover:bg-amber-500 hover:text-black transition">
+					Get started
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<section class="pt-32 pb-12">
+		<div class="container mx-auto px-6 text-center">
+			<h1
+				class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+				<b style="color: #f59e0b;">Free</b> Dental PMS
+			</h1>
+			<p class="text-slate-400 text-lg mb-12 max-w-2xl mx-auto">
+				An open-source, offline-first dental practice manager designed for speed, privacy, and clinical
+				precision.
+			</p>
+
+			<div class="relative max-w-5xl mx-auto px-4">
+				<div
+					class="rounded-2xl border border-white/10 shadow-2xl shadow-amber-500/5 overflow-hidden bg-slate-900">
+					<video alt="Apexo Dashboard" class="w-full h-auto opacity-90 desktop-only" autoplay loop muted
+						playsinline>
+						<source src="./assets/images/apexo.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
+					<video alt="Apexo Dashboard" class="w-full h-auto opacity-90 mobile-only" autoplay loop muted
+						playsinline>
+						<source src="./assets/images/apexo-mobile.mp4" type="video/mp4">
+						Your browser does not support the video tag.
+					</video>
 				</div>
 			</div>
-			<div class="pull-right">
-				<div class="header-inner">
-					<div class="hidden-lg-up menu-toggler pull-right p-l-10" data-pages="header-toggle"
-						data-pages-element="#header">
-						<div class="one"></div>
-						<div class="two"></div>
-						<div class="three"></div>
+		</div>
+	</section>
+
+	<section id="features" class="py-16">
+		<div class="container mx-auto px-6">
+			<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/calendar.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Calendar</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Optimized scheduling for high-traffic clinics.
+					</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/pt-management.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Patients</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Comprehensive medical & dental record tracking.
+					</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/stats.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Statistics</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Automated financial reports and clinic health.
+					</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/sync.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Sync</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Instant data mirroring across all endpoints.</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/offline.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Offline</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Local-first data. No internet? No problem.</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/languages.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Multilingual</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Global ready: EN, AR, ES, PL, KU.</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/secure.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Privacy</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Your data lives on your own servers.</p>
+				</div>
+
+				<div class="feature-card p-5 rounded-xl">
+					<img src="/assets/svg/backups.svg" width="100%" />
+					<h3 class="text-sm font-bold text-white mb-1">Backups</h3>
+					<p class="text-[11px] text-slate-500 leading-snug">Automated daily redundancy cycles.</p>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section id="download" class="py-20">
+		<div class="container mx-auto px-6">
+			<div class="glass-panel rounded-3xl p-8 md:p-12">
+				<div class="grid lg:grid-cols-2 gap-12 items-center">
+					<div>
+						<h2 class="text-4xl font-extrabold mb-6">Start Today.</h2>
+						<p class="text-slate-400 mb-8">Create your server and download the application to get started</p>
+
+						<div class="space-y-3">
+							<span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Select
+								Platform to download</span>
+							<div id="download-links" class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+								<a href="https://web.apexo.app"
+									class="platform-btn p-3 rounded-lg flex flex-col items-center gap-2 text-amber-500 border-amber-500/20">
+									<span class="text-xs font-semibold"><img height="25"
+											src="/assets/images/platform-web.png" /> Web</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+						<div class="flex items-center gap-4 mb-4">
+							<div
+								class="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-black font-bold text-sm">
+								!</div>
+							<h4 class="font-bold">Create your server</h4>
+						</div>
+						<p class="text-sm text-slate-400 mb-6">The best way to ensure 100% data ownership. Create your
+							own server in minutes, use the button below and get $200 credit for free.</p>
+						<a href="https://m.do.co/c/2f1ffd8f0fe4"
+							class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-amber-500 transition">Create
+							My Server</a>
 					</div>
 				</div>
 			</div>
-			<div class="menu-content mobile-dark pull-right clearfix main-menu" data-pages-direction="slideRight"
-				id="header">
-				<div class="pull-right">
-					<a href="#" class="padding-10 hidden-lg-up pull-right m-t-10 m-b-10 m-r-10"
-						data-pages="header-toggle" data-pages-element="#header">
-						<i class="pg-close_line"></i>
-					</a>
+		</div>
+	</section>
+
+	<footer class="bg-[#010409] border-t border-white/5 pt-16 pb-8">
+		<div class="container mx-auto px-6">
+			<div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16">
+				<div class="col-span-2 md:col-span-1">
+					<img src="/assets/images/logo_white_2x.png" alt="Apexo Logo" class="h-6 mb-6 opacity-80">
+					<p class="text-xs text-slate-500 leading-relaxed mb-4">
+						Apexo is a modern dental practice management solution. Built for speed, security, and the dental
+						professional's peace of mind.
+					</p>
+					<p class="text-[10px] text-slate-600 font-mono">Licensed under GNU GPLv3</p>
 				</div>
-				<div class="header-inner">
-					<ul class="menu">
-						<li>
-							<a class="btn btn-warning" href="#getting-started">Get Started</a>
+
+				<div>
+					<h5 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Legal & Support</h5>
+					<ul class="text-xs text-slate-500 space-y-3">
+						<li><a href="/privacy.txt" class="hover:text-amber-500 transition">Privacy Policy</a></li>
+						<li><a href="/terms.txt" class="hover:text-amber-500 transition">Terms & Conditions</a></li>
+						<li><a href="/GDPR.txt" class="hover:text-amber-500 transition">GDPR Notice</a></li>
+						<li><a href="/disclaimer.txt" class="hover:text-amber-500 transition">Disclaimer</a></li>
+						<li><a href="https://github.com/elselawi/apexo/issues"
+								class="hover:text-amber-500 transition">Support Center</a></li>
+					</ul>
+				</div>
+				<div>
+					<h5 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Developer</h5>
+					<ul class="text-xs text-slate-500 space-y-3">
+						<li><a href="https://blog.apexo.app/" class="hover:text-amber-500 transition">Blog</a></li>
+						<li><a href="https://github.com/elselawi" class="hover:text-amber-500 transition">Github</a>
 						</li>
+						<li><a href="https://www.reddit.com/user/elselawi/"
+								class="hover:text-amber-500 transition">Reddit</a></li>
+					</ul>
+				</div>
+				<div>
+					<h5 class="text-white text-xs font-bold uppercase tracking-widest mb-6">Other Projects</h5>
+					<ul class="text-xs text-slate-500 space-y-3">
+						<li><a href="https://shade.apexo.app/" class="hover:text-amber-500 transition font-medium">Shade
+								Master</a></li>
+						<li><a href="https://implantsdb.com/"
+								class="hover:text-amber-500 transition font-medium">Implants Database</a></li>
 						<li>
-							<a href="https://docs.apexo.app" target="_blank">Docs</a>
-						</li>
-						<li>
-							<a href="https://demo.apexo.app" target="_blank">Demo</a>
-						</li>
-						<li>
-							<a href="/changelog.html" target="_blank">Changelog</a>
-						</li>
-						<li>
-							<a href="https://github.com/elselawi/apexo" target="_blank">GitHub</a>
+							<a class="hover:text-amber-500 transition font-medium"
+								href="https://cephalometric.apexo.app/">Cephalometric Analysis</a>
 						</li>
 					</ul>
 				</div>
 			</div>
+
+			<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+				<p class="text-[10px] text-slate-600 font-bold tracking-[0.2em] uppercase">Made with ❤️ by Dr. Ali
+					Saleem</p>
+				<div class="flex gap-4 opacity-50">
+					<a href="https://github.com/elselawi/apexo">
+						<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+							<path
+								d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.627-5.373-12-12-12z" />
+						</svg>
+					</a>
+				</div>
+			</div>
 		</div>
-	</nav>
-	<div class="page-wrappers">
-		<section class="p-b-85 p-t-100" id="sectionLayout">
-			<div class="container">
-				<div class="md-p-l-20 md-p-r-20 xs-no-padding m-b-45">
-					<h5 class="fs-16 m-b-20 hint-text no-margin">
-						Say goodbye to pen and paper
-					</h5>
-					<div class="row">
-						<div class="col-sm-5 col-md-4">
-							<h2 class="m-t-5">By <i>dentist</i> for <i>dentists</i></h2>
-						</div>
-						<div class="col-sm-7 col-md-7 no-padding xs-p-l-15 xs-p-r-15">
-							<div class="p-l-35 md-p-l-5 md-p-t-15">
-								<p>
-									Keep your dental clinic records at your finger tips with a
-									beautifully designed application that meets most needs of
-									any dental clinic. From patient records, history,
-									appointments and scheduling, to finances and detailed
-									reports.
-								</p>
-								<p class="hint-text small-text col-md-7 no-padding">
-									+ More optional modules
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/calendar.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Appointments management</p>
-							<h3 class="normal text-black">Calendar</h3>
-							<p class="fs-15 p-b-35">
-								A weekly calendar, that has been specifically designed and
-								optimized for appointments management.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/pt-management.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Keep record of your</p>
-							<h3 class="normal text-black">Patients</h3>
-							<p class="fs-15 p-b-35">
-								Easily accessible and searchable patients records. With
-								medical history and dental history that is detailed on graphic
-								chart on each tooth.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/stats.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Tracking & reporting</p>
-							<h3 class="normal text-black">Statistics</h3>
-							<p class="fs-15 p-b-35">
-								Detailed reports about patients, doctors, appointments and
-								finances, for a single or all doctors.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/polyclinics.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Multiple doctors & staff</p>
-							<h3 class="normal text-black">Polyclinics</h3>
-							<p class="fs-15 p-b-35">
-								It can be used with multiple accounts, each staff member or
-								doctor can have specific permissions on the application.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/sync.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Multiple devices</p>
-							<h3 class="normal text-black">Synchronization</h3>
-							<p class="fs-15 p-b-35">
-								Install the application on any device you use, and all of your
-								devices will be in synchronization with each other.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/offline.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Also works when</p>
-							<h3 class="normal text-black">Offline</h3>
-							<p class="fs-15 p-b-35">
-								The application is fully functional when you're offline, and
-								just as you become online, all of your devices will be back on
-								sync again.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/languages.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Many languages</p>
-							<h3 class="normal text-black">Internationalization</h3>
-							<p class="fs-15 p-b-35">
-								You can use the application in any of the supported languages;
-								English, German, Spanish, Chinese, Arabic, and Kurdish.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/secure.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Protected and encrypted</p>
-							<h3 class="normal text-black">Secure</h3>
-							<p class="fs-15 p-b-35">
-								Our servers are HIPAA-compliant, encrypted & secure. The data
-								are two-way encrypted, in your local device and in our
-								servers.
-							</p>
-						</span>
-					</div>
-					<div class="col-md-4">
-						<div class="feature-svg">
-							<img src="assets/svg/backups.svg" alt="condensed layout" class="lazy loaded" />
-						</div>
-						<span class="feature-text p-t-30 p-b-35 sm-p-l-15 p-l-35 p-r-35">
-							<p class="fs-16 text-black">Safe and portable</p>
-							<h3 class="normal text-black">Backups</h3>
-							<p class="fs-15 p-b-35">
-								Your data is automatically backed up and saved securely
-								(encrypted) on multiple locations. You can retrieve any backup
-								in a matter of second.
-							</p>
-						</span>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="p-b-35 p-t-100 bg-primary relative no-overflow">
-			<img src="assets/images/mac1.png" class="dev-macbook hidden-md-down" />
-			<div class="container p-t-30">
-				<div class="row sm-p-l-15 sm-p-r-15">
-					<div class="col-md-6">
-						<div class="p-b-70">
-							<p class="text-warning fs-16 normal p-b-10">See for yourself</p>
-							<p class="fs-16 light text-white lh-fix">
-								This demo is a web application, no installation required.
-							</p>
-						</div>
-					</div>
-					<div class="col-md-6" style="text-align: right">
-						<a class="btn btn-warning demo-btn" href="http://demo.apexo.app" target="_blank">Open Demo</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="container plans no-overflow" id="getting-started">
-			<div class="getting-started-inner">
-				<h1 class="p-b-20">Get Started</h1>
-				<h3 class="normal">1. Setup your server</h3>
-				<p class="fs-15">To give you the ultimate privacy and control, you're responsible for setting up
-					your server, and this is where your data would live.</p>
-				<p class="fs-15">Ready to build? Setup your server via the button below and you'll have your account
-					with $200 in free credits.</p>
-				<a class="btn btn-warning" target="_blank" href="https://m.do.co/c/2f1ffd8f0fe4">Setup My Server ($200 free credit)</a>
-				<p class="fs-15 p-t-10">More about how to connect your server in <a target="_blank" href="https://docs.apexo.app">the documentation</a></p>
-				<br>
-				<h3 class="normal p-t-35">2. Download</h3>
-				<p class="fs-15 p-b-10">Download the application</p>
-				<table id="download-table">
-					<thead>
-						<tr>
-							<td></td>
-							<td>Platform</td>
-							<td>Latest</td>
-							<td>Older</td>
-						</tr>
-					</thead>
-					<tbody id="download-table-body"></tbody>
-				</table>
-			</div>
-		</section>
-		<section id="pre-footer" class="bg-black p-t-35 relative">
-			<div class="container">
-				<br />
-			</div>
-		</section>
-		<section class="bg-black p-t-90 p-b-100 relative">
-			<div class="container">
-				<div class="row sm-p-l-15 sm-p-r-15 justify-content-center">
-					<div class="col-md-5">
-						<div class="p-b-30">
-							<h4 class="text-white normal p-b-20">License</h4>
-							<p class="text-white fs-15 flex-1">
-								<span class="hint-text">This application is an open source effort, was made by a
-									dentist out of frustration with other free and commercial
-									applications. The license for this software is
-								</span>
-								<a href="https://github.com/elselawi/apexo/blob/master/LICENSE.md" target="_blank"
-									class="normal text-primary">GNU GPLv3 License</a>.
-							</p>
-						</div>
-					</div>
-					<div class="col-md-5 offset-md-1">
-						<div class="">
-							<h4 class="text-white normal p-b-20">Get support</h4>
-							<p class="text-white fs-15 flex-1 hint-text">
-								I have a very limited time to provide support for users, and
-								answer questions. However, you can post your queries on the
-								<a target="_blank" class="normal text-primary"
-									href="https://github.com/elselawi/apexo">github repository</a>
-								and I'll try my best to answer in a timely manner.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class="p-b-55 p-t-75 xs-p-b-20 bg-master-darker relative">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-4 col-xs-12 xs-m-b-40">
-						<img src="assets/images/logo_white.png" height="18"
-							data-src-retina="assets/images/logo_white_2x.png" class="alt" alt="" />
-					</div>
-				</div>
-				<div>
-					<p class="fs-11 hint-text no-padding inline rights-bar p-t-10">
-						<a target="_blank" style="color: #fff" href="./privacy.txt">Privacy policy</a>
-						-
-						<a target="_blank" style="color: #fff" href="./terms.txt">Terms & conditions</a>
-						-
-						<a target="_blank" style="color: #fff" href="./GDPR.txt">GDPR Notice</a>
-						-
-						<a target="_blank" style="color: #fff" href="./disclaimer.txt">Disclaimer</a>
-					</p>
-					<p class="fs-11 hint-text inline no-padding rights-bar p-t-10">
-						/// Made with ❤️ in Mosul
-					</p>
-				</div>
-				<ul class="bottom-links">
-					<li>
-						<a href="https://implantsdb.com" target="_blank">Implants Database</a>
-					</li>
-					<li>
-						<a href="https://shade.apexo.app" target="_blank">Shade Master</a>
-					</li>
-				</ul>
-			</div>
-		</section>
-	</div>
+	</footer>
+
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			const menuToggler = document.querySelector(
-				'[data-pages="header-toggle"]'
-			);
-			const menuContent = document.querySelector(".menu-content");
-			const menuItems = document.querySelectorAll(".menu-content a");
-			const closeButton = document.querySelector(".pg-close_line");
-
-			// Create and append overlay
-			const overlay = document.createElement("div");
-			overlay.className = "menu-overlay";
-			document.querySelectorAll(".header").item(0).appendChild(overlay);
-
-			function closeMenu() {
-				menuContent.classList.remove("show");
-				overlay.classList.remove("show");
-			}
-
-			function openMenu() {
-				menuContent.classList.add("show");
-				overlay.classList.add("show");
-			}
-
-			menuToggler.addEventListener("click", function (e) {
-				e.preventDefault();
-				if (menuContent.classList.contains("show")) {
-					closeMenu();
-				} else {
-					openMenu();
-				}
-			});
-
-			menuItems.forEach((item) => {
-				item.addEventListener("click", closeMenu);
-			});
-
-			closeButton.addEventListener("click", closeMenu);
-			overlay.addEventListener("click", closeMenu);
-
-			document.addEventListener("keydown", (e) => {
-				if (e.key === "Escape") {
-					closeMenu();
-				}
-			});
-		});
-	</script>
-	<script>
-		// TODO: place store links here:
 		const downloadLinks = {
 			windows: {},
 			mac: {},
 			linux: {},
 			ios: {},
 			android: {},
-			web: "https://web.apexo.app",
 			// play_store: "",
 			// app_store: "",
 		};
@@ -408,107 +317,25 @@
 				}
 				downloadLinks[platform][version] = url;
 			}
+
+
 			Object.keys(downloadLinks).forEach((platform) => {
-				if (typeof downloadLinks[platform] == "string") {
-					document.getElementById("download-table-body").innerHTML += `
-						<tr>
-							<td><img src="./assets/images/platform-${platform}.png" /></td>
-							<td>${platform.toUpperCase().replace("_", " ")}</td>
-							<td><a class="btn" target="_blank" href="${downloadLinks[platform]}">${platform == "web" ? "Launch" : "Get"}</a></td>
-						</tr>
-						`;
-					return;
-				}
-				const versions = Object.keys(downloadLinks[platform]);
-				const sortedVersions = versions.sort((a, b) => {
-					const [majorA, minorA, patchA] = a.split(".").map(Number);
-					const [majorB, minorB, patchB] = b.split(".").map(Number);
-					return majorB - majorA || minorB - minorA || patchB - patchA;
-				});
-				if (sortedVersions.length === 0) return; // skip this platform if no versions are found
-				const latestVersion = sortedVersions[0];
-				const otherVersions = sortedVersions.slice(1);
-				document.getElementById("download-table-body").innerHTML += `
-					<tr>
-						<td><img src="./assets/images/platform-${platform}.png" /></td>
-						<td>${platform.toUpperCase()}</td>
-						<td><a target="_blank" class="btn" href="${downloadLinks[platform][latestVersion]
-					}">Download ${latestVersion}</a></td>
-						${otherVersions.length > 0
-						? `
-						<td>
-							<button>Older</button>
-							<ul>
-								${otherVersions
-							.map(
-								(version) =>
-									`<li><a target="_blank" href="${downloadLinks[platform][version]}">${version}</a></li>`
-							)
-							.join("")}
-							</ul>
-						</td>
-						`
-						: "<td></td>"
-					}
-					</tr>
+
+				if (Object.keys(downloadLinks[platform]).length > 0) {
+
+					const versions = Object.keys(downloadLinks[platform]);
+					const links = downloadLinks[platform];
+					const latestVersion = versions[versions.length - 1];
+
+					document.getElementById("download-links").innerHTML = document.getElementById("download-links").innerHTML + `
+					<a href="${downloadLinks[platform][latestVersion]}" class="platform-btn p-3 rounded-lg flex flex-col items-center gap-2">
+						<span class="text-xs font-semibold"><img height="25" src="/assets/images/platform-${platform}.png">${platform}</span>
+					</a>
 					`;
-			});
-
-			const versionButtons = document.querySelectorAll(
-				"#download-table button"
-			);
-
-			versionButtons.forEach((button) => {
-				console.log(button);
-				button.addEventListener("click", (e) => {
-					const versions = button.nextElementSibling.innerHTML;
-					showVersionModal(versions);
-				});
+				}
 			});
 		}
 		getDist();
-	</script>
-	<script>
-		function showVersionModal(versions) {
-			// Create modal elements
-			const modal = document.createElement("div");
-			modal.className = "version-modal";
-			modal.innerHTML = `<h3>Older Versions</h3>${versions}`;
-
-			const overlay = document.createElement("div");
-			overlay.className = "modal-overlay";
-
-			// Add to DOM
-			document.body.appendChild(overlay);
-			document.body.appendChild(modal);
-
-			// Show modal
-			setTimeout(() => {
-				modal.classList.add("active");
-				overlay.classList.add("active");
-			}, 10);
-
-			// Close handlers
-			overlay.onclick = closeModal;
-
-			function closeModal() {
-				modal.remove();
-				overlay.remove();
-			}
-		}
-	</script>
-	<script
-		src="https://rawcdn.githack.com/AOEpeople/cookie-notice/8fb91e6e97831821c9fbb427cabe07f1ff0719ac/dist/cookie.notice.min.js"></script>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-NEXB30Z07H"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag("js", new Date());
-
-		gtag("config", "G-NEXB30Z07H");
 	</script>
 </body>
 
