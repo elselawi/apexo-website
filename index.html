@@ -287,56 +287,44 @@
 		</div>
 	</footer>
 
-	<script>
-		const downloadLinks = {
-			windows: {},
-			mac: {},
-			linux: {},
-			ios: {},
-			android: {},
-			// play_store: "",
-			// app_store: "",
-		};
+<script>
+    async function getDist() {
+        try {
+            // Fetch from your custom R2 domain
+            const response = await fetch("https://download.apexo.app/metadata.json");
+            const data = await response.json();
 
-		async function getDist() {
-			const json = await (
-				await fetch(
-					"https://api.github.com/repos/elselawi/apexo/contents/dist"
-				)
-			).json();
-			for (const file of json) {
-				const url = file.download_url;
-				const name = file.name;
-				const nameWithoutExtension = name.substring(0, name.lastIndexOf("."));
-				const platform = nameWithoutExtension.split("_")[1];
-				const version = nameWithoutExtension.split("_")[2];
-				if (platform == undefined) continue;
-				if (typeof downloadLinks[platform] == "string") continue;
-				if (downloadLinks[platform] == undefined) {
-					downloadLinks[platform] = {};
-				}
-				downloadLinks[platform][version] = url;
-			}
+            const container = document.getElementById("download-links");
+            const downloads = data.downloads;
 
+            // Iterate through the platforms available in the JSON
+            Object.keys(downloads).forEach((platform) => {
+                const downloadUrl = downloads[platform];
 
-			Object.keys(downloadLinks).forEach((platform) => {
+                // Append the button to the UI
+                container.innerHTML += `
+                    <a href="${downloadUrl}" class="platform-btn p-3 rounded-lg flex flex-col items-center gap-2">
+                        <span class="text-xs font-semibold">
+                            <img height="25" src="/assets/images/platform-${platform}.png" alt="${platform}">
+                            ${platform.charAt(0).toUpperCase() + platform.slice(1)}
+                        </span>
+                    </a>
+                `;
+            });
 
-				if (Object.keys(downloadLinks[platform]).length > 0) {
+            // Optional: Update a version badge on your site if you have one
+            const versionBadge = document.getElementById("latest-version");
+            if (versionBadge) versionBadge.innerText = `v${data.latest_version}`;
 
-					const versions = Object.keys(downloadLinks[platform]);
-					const links = downloadLinks[platform];
-					const latestVersion = versions[versions.length - 1];
+        } catch (error) {
+            console.error("Error loading release metadata:", error);
+            document.getElementById("download-links").innerHTML = 
+                `<p class="text-red-500">Failed to load latest downloads. Please check back later.</p>`;
+        }
+    }
 
-					document.getElementById("download-links").innerHTML = document.getElementById("download-links").innerHTML + `
-					<a href="${downloadLinks[platform][latestVersion]}" class="platform-btn p-3 rounded-lg flex flex-col items-center gap-2">
-						<span class="text-xs font-semibold"><img height="25" src="/assets/images/platform-${platform}.png">${platform}</span>
-					</a>
-					`;
-				}
-			});
-		}
-		getDist();
-	</script>
+    getDist();
+</script>
 </body>
 
 </html>
